@@ -1,5 +1,3 @@
-
-
 import java.awt.*;
 import java.applet.*;
 import java.util.*;
@@ -21,26 +19,26 @@ public class Train
   public void addCar(String s, Color c)
   {
    
-    RailCar rc;
+    RailCar rail;
     if(s.equals("Locomotive"))
     {
-      rc = new Locomotive(c,lastX, yPos);
-      railCars.add(rc);
+      rail = new Locomotive(c,lastX, yPos);
+      railCars.add(rail);
     }
     else if(s.equals("PassengerCar"))
     {
-      rc = new PassengerCar(c,lastX,yPos);
-      railCars.add(rc);
+      rail = new PassengerCar(c,lastX,yPos);
+      railCars.add(rail);
     }
     else if(s.equals("FreightCar"))
     {
-      rc = new FreightCar(c,lastX,yPos);
-      railCars.add(rc);
+      rail = new FreightCar(c,lastX,yPos);
+      railCars.add(rail);
     }
     else if(s.equals("Caboose"))
     {
-      rc = new Caboose(c,lastX,yPos);
-      railCars.add(rc);
+      rail = new Caboose(c,lastX,yPos);
+      railCars.add(rail);
     }
     
     lastX += 150 + 25;//Car length plus link length
@@ -58,3 +56,4 @@ public class Train
    
    
 }
+
