@@ -1,3 +1,10 @@
+
+/**
+ * Write a description of interface Train here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 import java.awt.*;
 import java.applet.*;
 import java.util.*;
@@ -6,54 +13,98 @@ public class Train
 {
  
   ArrayList<RailCar> railCars = new ArrayList<RailCar>();
-  int lastX;
+  int prevX;
   int yPos = 150;
   
   
   public Train(int xStart, int yStart)
    {
-      lastX = xStart;
+      prevX = xStart;
       yPos = yStart;     
    }
 
-  public void addCar(String s, Color c)
+  public void addCar(String s, Color color)
   {
    
     RailCar rail;
     if(s.equals("Locomotive"))
     {
-      rail = new Locomotive(c,lastX, yPos);
+      rail = new Locomotive(color,prevX, yPos);
       railCars.add(rail);
     }
     else if(s.equals("PassengerCar"))
     {
-      rail = new PassengerCar(c,lastX,yPos);
+      rail = new PassengerCar(color,prevX,yPos);
       railCars.add(rail);
     }
     else if(s.equals("FreightCar"))
     {
-      rail = new FreightCar(c,lastX,yPos);
+      rail = new FreightCar(color,prevX,yPos);
       railCars.add(rail);
     }
     else if(s.equals("Caboose"))
     {
-      rail = new Caboose(c,lastX,yPos);
+      rail = new Caboose(color,prevX,yPos);
       railCars.add(rail);
     }
     
-    lastX += 150 + 25;//Car length plus link length
+    prevX += 175;
    }
   
+   public void addCar(int num, String s, Color color)
+  {
+     
+      
+    RailCar rail;
+    if(s.equals("Locomotive"))
+    {
+      rail = new Locomotive(color,prevX, yPos);
+      railCars.add(num,rail);
+    }
+    else if(s.equals("PassengerCar"))
+    {
+      rail = new PassengerCar(color,prevX,yPos);
+      railCars.add(num,rail);
+    }
+    else if(s.equals("FreightCar"))
+    {
+      rail = new FreightCar(color,prevX,yPos);
+      railCars.add(num,rail);
+    }
+    else if(s.equals("Caboose"))
+    {
+      rail = new Caboose(color,prevX,yPos);
+      railCars.add(num,rail);
+    }
+    
+    prevX += 175;
+    /*
+     * 1000000000000000000000000000000000000000000 POINT
+     * 
+     * 
+     */
+    //get Current Car RailCar oldCar = railcars.get(num);
+    //get X position int oldX = 
+    //prevX = startingX
+    //startingX = 
+    
+    for(int k = num + 1; k<railCars.size(); k++)
+    {
+        RailCar yeet = railcar.get(k);
+        int xTempPos = railCar.getCarX();
+        xTempPos+=175;
+        yeet.setCarX(xTempPos);
+    }
+    prevX+=175;
+   }
    
    public void showCars(Graphics g){
     
        for(RailCar r: railCars)
        {
            r.drawCar(g);
-           
         }
     }
    
    
 }
-
