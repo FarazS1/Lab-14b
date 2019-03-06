@@ -50,8 +50,9 @@ public class Train
     
     prevX += 175;
    }
-  
-   public void addCar(int num, String s, Color color)
+
+   
+   public void YEETCar(int num, String s, Color color)
   {
      
       
@@ -76,22 +77,23 @@ public class Train
       rail = new Caboose(color,prevX,yPos);
       railCars.add(num,rail);
     }
-    
     prevX += 175;
-    /*
-     * 1000000000000000000000000000000000000000000 POINT
-     * 
-     * 
-     */
-    //get Current Car RailCar oldCar = railcars.get(num);
-    //get X position int oldX = 
-    //prevX = startingX
-    //startingX = 
+    }
+   
+   
+   public void addCar(int num, String s, Color color)
+  {
+    RailCar oldCar = railCars.get(num);
+      int xPosCurrent = oldCar.getCarX();
+      int olderX = prevX;
+      prevX = xPosCurrent;
+      YEETCar(num,s,color);
+      
     
     for(int k = num + 1; k<railCars.size(); k++)
     {
-        RailCar yeet = railcar.get(k);
-        int xTempPos = railCar.getCarX();
+        RailCar yeet = railCars.get(k);
+        int xTempPos = yeet.getCarX();
         xTempPos+=175;
         yeet.setCarX(xTempPos);
     }
