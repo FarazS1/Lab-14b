@@ -97,7 +97,7 @@ public class Train
         xTempPos+=175;
         yeet.setCarX(xTempPos);
     }
-    prevX+=175;
+    prevX = olderX + 175;
    }
    
    public void showCars(Graphics g){
