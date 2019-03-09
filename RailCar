@@ -4,9 +4,9 @@ import java.awt.*;
 
 public class RailCar
 {
-    private Color carColor;
-    private int xPos;
-    private int yPos;
+    public Color carColor;
+    public int xPos;
+    public int yPos;
 
     public RailCar(Color cC, int xP, int yP)
     {
